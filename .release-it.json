@@ -15,9 +15,9 @@
     "tagName": "${version}"
   },
   "hooks": {
-    "before:release": "pnpm run build",
     "before:init": "echo 'Starting release...'",
     "after:bump": "echo 'Version bumped'",
+    
     "after:release": "echo 'Release finished'"
   }
 }
