@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>链接预览 Demo</title>
+  <style>
+    .preview-box {
+      position: absolute;
+      background: #FFFFFF;
+      border: 1px solid #CCCCCC;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+      display: none;
+      z-index: 9999;
+      font-family: sans-serif;
+    }
+    
+    .preview-box h4 {
+      margin: 0 0 6px;
+      font-size: 16px;
+    }
+    
+    .preview-box p {
+      margin: 0;
+      font-size: 13px;
+      color: #555555;
+    }
+  </style>
+</head>
+<body>
+<h2>鼠标悬停查看链接信息</h2>
+<p>
+  👉 <a href="https://peiyanlu.github.io/vite-press/" class="preview-link">VitePress 主页</a>
+</p>
+
+<div id="previewBox" class="preview-box"></div>
+
+<script>
+  const previewBox = document.getElementById('previewBox');
+  let hoverTimer = null;
+  
+  // 悬停处理
+  document.querySelectorAll('.preview-link').forEach(link => {
+    link.addEventListener('mouseenter', async (e) => {
+      const href = link.href;
+      const rect = link.getBoundingClientRect();
+      
+      // 设置浮窗位置
+      previewBox.style.left = rect.left + 'px';
+      previewBox.style.top = (rect.bottom + 8 + window.scrollY) + 'px';
+      previewBox.style.display = 'block';
+      previewBox.innerHTML = '加载中...';
+      
+      // 取消之前的计时器
+      if (hoverTimer) clearTimeout(hoverTimer);
+      
+      try {
+        const res = await fetch(href, { mode: 'cors' });
+        const html = await res.text();
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        
+        const title = doc.querySelector('title')?.innerText || '无标题';
+        const desc = doc.querySelector('meta[name="description"]')?.content || '无描述信息';
+        
+        previewBox.innerHTML = `
+            <h4>${ title }</h4>
+            <p>${ desc }</p>
+          `;
+      } catch (err) {
+        previewBox.innerHTML = `<p>❌ 获取失败：${ err.message }</p>`;
+      }
+    });
+    
+    link.addEventListener('mouseleave', () => {
+      // 延迟隐藏，避免用户突然移出
+      hoverTimer = setTimeout(() => {
+        previewBox.style.display = 'none';
+      }, 300);
+    });
+    
+    previewBox.addEventListener('mouseenter', () => {
+      if (hoverTimer) clearTimeout(hoverTimer); // 用户移入浮窗，保持显示
+    });
+    
+    previewBox.addEventListener('mouseleave', () => {
+      previewBox.style.display = 'none';
+    });
+  });
+</script>
+</body>
+</html>

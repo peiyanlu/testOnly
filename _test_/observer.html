@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Observer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+<div class="wrapper">
+<div class="container">
+  <h1>Observer</h1>
+  <div>55</div>
+</div>
+<!-- /.container -->
+</div>
+</body>
+
+<script >
+  const observer = new MutationObserver((mutations) => {
+    console.log(mutations)
+  })
+  observer.observe(document.body, {
+    childList: true
+  })
+  
+  
+  const resize = new ResizeObserver((entries) => {
+    console.log(entries)
+  })
+  resize.observe(document.body, {
+    box: 'border-box'
+  })
+</script>
+</html>

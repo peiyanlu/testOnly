@@ -1,0 +1,42 @@
+{
+  "name": "ts-run-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "lib": "tsdown -c tsdown.config.ts"
+  },
+  "dependencies": {
+    "@peiyanlu/cli-utils": "^0.0.1",
+    "@types/minimist": "^1.2.5",
+    "@types/node": "^22.15.16",
+    "@types/react": "^19.1.8",
+    "@types/semver": "^7.7.1",
+    "crawler": "^2.0.2",
+    "github-url-to-object": "^4.0.6",
+    "ip2region": "^2.3.0",
+    "minimist": "^1.2.8",
+    "puppeteer": "^24.9.0",
+    "react": "^19.1.0",
+    "release-it": "^19.1.0",
+    "semver": "^7.7.3",
+    "tinyglobby": "^0.2.13",
+    "vit": "^0.0.1",
+    "vite": "^7.3.0"
+  },
+  "devDependencies": {
+    "@types/crawler": "^1.2.7",
+    "icon-gen": "^5.0.0",
+    "png-to-ico": "^3.0.1",
+    "sharp": "^0.34.5",
+    "tsdown": "^0.12.3",
+    "tsx": "^4.21.0",
+    "typescript": "^5.5.3"
+  },
+  "private": true,
+  "pnpm": {
+    "neverBuiltDependencies": []
+  }
+}

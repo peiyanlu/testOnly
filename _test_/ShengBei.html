@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>圣杯布局（传统）</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    header, footer {
+      background: #CCCCCC;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .container {
+      overflow: hidden; /* 清除浮动 */
+    }
+    
+    .main {
+      float: left;
+      width: 100%;
+      background: #DDDDDD;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .left {
+      float: left;
+      width: 200px;
+      margin-left: -100%;
+      background: #EEEEEE;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    
+    .right {
+      float: left;
+      width: 200px;
+      margin-left: -200px;
+      background: #EEEEEE;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+<header>头部</header>
+
+<div class="container">
+  <div class="main">主内容区</div>
+  <div class="left">左栏</div>
+  <div class="right">右栏</div>
+</div>
+
+<footer>底部</footer>
+</body>
+
+<script >
+  
+  // 同步
+  console.log('🟢 [sync] start')
+  
+  // ✅ Promise 微任务
+  Promise.resolve().then(() => {
+    console.log('🧩 [Promise.then]')
+  })
+  
+  // ✅ setTimeout (timers)
+  setTimeout(() => {
+    console.log('⏰ [setTimeout]')
+    
+    Promise.resolve().then(() => {
+      console.log('🧩 [Promise in setTimeout]')
+    })
+  }, 0)
+  
+  // 同步
+  console.log('🟢 [sync] end')
+
+</script>
+</html>

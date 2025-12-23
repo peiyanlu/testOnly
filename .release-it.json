@@ -1,0 +1,23 @@
+{
+  "$schema": "https://unpkg.com/release-it/schema/release-it.json",
+  "github": {
+    "release": true
+  },
+  "npm": {
+    "publish": true
+  },
+  "git": {
+    "commit": true,
+    "tag": true,
+    "push": true,
+    "requireCleanWorkingDir": false,
+    "commitMessage": "chore(release): v${version}",
+    "tagName": "${version}"
+  },
+  "hooks": {
+    "before:release": "pnpm run build",
+    "before:init": "echo 'Starting release...'",
+    "after:bump": "echo 'Version bumped'",
+    "after:release": "echo 'Release finished'"
+  }
+}

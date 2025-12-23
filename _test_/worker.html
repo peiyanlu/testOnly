@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+</body>
+
+<script>
+  const worker = new Worker('./worker.js')
+  
+  setTimeout(() => {
+    worker.postMessage('789')
+  })
+  
+  worker.onmessage = event => {
+    console.log(event.data)
+  }
+
+</script>
+</html>
