@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@peiyanlu/cli-utils": "^0.0.1",
+    "@peiyanlu/release": "file:E:/@peiyanlu/release/peiyanlu-release-0.0.0.tgz",
     "@types/minimist": "^1.2.5",
     "@types/node": "^22.15.16",
     "@types/react": "^19.1.8",
@@ -35,7 +36,7 @@
     "tsx": "^4.21.0",
     "typescript": "^5.5.3"
   },
-  "private": true,
+  "private": false,
   "pnpm": {
     "neverBuiltDependencies": []
   }
