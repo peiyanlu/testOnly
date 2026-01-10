@@ -769,7 +769,7 @@ packages:
     engines: {node: '>=20'}
 
   '@peiyanlu/release@file:../@peiyanlu/release/peiyanlu-release-0.0.0.tgz':
-    resolution: {integrity: sha512-YFpsTkxtCr7wPAwqUw8qzQoucyma39jmKEz+rplGa0OQ7tA/sGF5sqk9VCI3/oEva02iPKooko2tDU266PIImA==, tarball: file:../@peiyanlu/release/peiyanlu-release-0.0.0.tgz}
+    resolution: {integrity: sha512-2nVsqdAicVMYfGEueboi6/nnmA91voCMciPl3gUj8U0o41Ox43EiSmOjQeBClsrxxrZofGpVaHPHb/sqHkYpeg==, tarball: file:../@peiyanlu/release/peiyanlu-release-0.0.0.tgz}
     version: 0.0.0
     engines: {node: '>=20'}
     hasBin: true
