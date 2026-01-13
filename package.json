@@ -1,16 +1,16 @@
 {
   "name": "ts-run-test",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "",
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "lib": "tsdown -c tsdown.config.ts"
+    "lib": "tsdown -c tsdown.config.ts",
+    "release": "release-it --dry-run"
   },
   "dependencies": {
     "@peiyanlu/cli-utils": "^0.0.1",
-    "@peiyanlu/release": "file:E:/@peiyanlu/release/peiyanlu-release-0.0.0.tgz",
     "@types/minimist": "^1.2.5",
     "@types/node": "^22.15.16",
     "@types/react": "^19.1.8",
@@ -28,6 +28,7 @@
     "vite": "^7.3.0"
   },
   "devDependencies": {
+    "@peiyanlu/release": "^0.0.1",
     "@types/crawler": "^1.2.7",
     "icon-gen": "^5.0.0",
     "png-to-ico": "^3.0.1",

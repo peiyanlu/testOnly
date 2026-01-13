@@ -11,9 +11,6 @@ importers:
       '@peiyanlu/cli-utils':
         specifier: ^0.0.1
         version: 0.0.1
-      '@peiyanlu/release':
-        specifier: file:E:/@peiyanlu/release/peiyanlu-release-0.0.0.tgz
-        version: file:../@peiyanlu/release/peiyanlu-release-0.0.0.tgz
       '@types/minimist':
         specifier: ^1.2.5
         version: 1.2.5
@@ -60,6 +57,9 @@ importers:
         specifier: ^7.3.0
         version: 7.3.0(@types/node@22.15.16)(jiti@2.6.1)(tsx@4.21.0)
     devDependencies:
+      '@peiyanlu/release':
+        specifier: ^0.0.1
+        version: 0.0.1
       '@types/crawler':
         specifier: ^1.2.7
         version: 1.2.7
@@ -768,9 +768,8 @@ packages:
     resolution: {integrity: sha512-dVAHSbshxbWriutw8ph80DUOspzNJBwMDm5k45DE1q7+X3rwKzv0IPseBw0cZipjNacwTHXrPvI7/jp3iPj6qw==}
     engines: {node: '>=20'}
 
-  '@peiyanlu/release@file:../@peiyanlu/release/peiyanlu-release-0.0.0.tgz':
-    resolution: {integrity: sha512-2nVsqdAicVMYfGEueboi6/nnmA91voCMciPl3gUj8U0o41Ox43EiSmOjQeBClsrxxrZofGpVaHPHb/sqHkYpeg==, tarball: file:../@peiyanlu/release/peiyanlu-release-0.0.0.tgz}
-    version: 0.0.0
+  '@peiyanlu/release@0.0.1':
+    resolution: {integrity: sha512-kXi8WQsvttE3BZouVm+SxDdyJYtjJjeOJfIPsQOP9llBESZbLixAsRzYD7IUeQ9sgEGgBOZlKyZN4OOaBo5VOQ==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -2789,7 +2788,7 @@ snapshots:
 
   '@peiyanlu/cli-utils@0.0.1': {}
 
-  '@peiyanlu/release@file:../@peiyanlu/release/peiyanlu-release-0.0.0.tgz':
+  '@peiyanlu/release@0.0.1':
     dependencies:
       '@clack/prompts': 0.11.0
       '@octokit/rest': 22.0.1
